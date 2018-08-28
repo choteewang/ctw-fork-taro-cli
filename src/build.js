@@ -1,13 +1,10 @@
 const fs = require('fs-extra')
 const path = require('path')
-const chalk = require('chalk')
-
-const Util = require('./util')
 const CONFIG = require('./config')
 
 const appPath = process.cwd()
 
-function build (args, buildConfig) {
+function build (args, buildConfig = {}) {
   const { type, watch } = buildConfig
   const outputPath = path.join(appPath, CONFIG.OUTPUT_DIR)
   if (!fs.existsSync(outputPath)) {
@@ -15,22 +12,7 @@ function build (args, buildConfig) {
   } else {
     fs.emptyDirSync(outputPath)
   }
-  switch (type) {
-    case Util.BUILD_TYPES.H5:
-      buildForH5({ watch })
-      break
-    case Util.BUILD_TYPES.WEAPP:
-      buildForWeapp({ watch })
-      break
-    case Util.BUILD_TYPES.RN:
-      buildForRN({ watch })
-      break
-    case Util.BUILD_TYPES.UI:
-      buildForUILibrary({ watch })
-      break
-    default:
-      console.log(chalk.red('输入类型错误，目前只支持weapp/h5/rn三端类型'))
-  }
+  buildForWeapp({ watch })
 }
 
 function buildForWeapp ({ watch }) {
