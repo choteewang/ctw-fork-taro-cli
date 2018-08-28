@@ -5,6 +5,7 @@ const CONFIG = require('./config')
 const appPath = process.cwd()
 
 function build (args, buildConfig = {}) {
+  console.log('Enjoy -> xcx, 第二步开始, 调用proxy转换JSX, 生成并拆分小程序文件')
   const { type, watch } = buildConfig
   const outputPath = path.join(appPath, CONFIG.OUTPUT_DIR)
   if (!fs.existsSync(outputPath)) {

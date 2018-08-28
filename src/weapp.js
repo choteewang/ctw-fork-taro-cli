@@ -1736,19 +1736,22 @@ function watchFiles () {
     })
 }
 
-async function build ({ watch }) {
+async function build (/*{ watch }*/) {
   process.env.TARO_ENV = Util.BUILD_TYPES.WEAPP
-  console.log('process.env.TARO_ENV: ' + process.env.TARO_ENV)
-  console.log('process.env.NODE_ENV: ' + process.env.NODE_ENV)
-  console.log('process.cwd()', process.cwd())
-  isProduction = !watch
+  // console.log('process.env.TARO_ENV: ' + process.env.TARO_ENV)
+  // console.log('process.env.NODE_ENV: ' + process.env.NODE_ENV)
+  // console.log('process.cwd()', process.cwd())
+
+  // 开发初期isProduction设为false
+  // isProduction = !watch
+  isProduction = false
   buildProjectConfig()
   copyFiles()
   appConfig = await buildEntry()
   await buildPages()
-  if (watch) {
-    watchFiles()
-  }
+  // if (watch) {
+  //   watchFiles()
+  // }
 }
 
 module.exports = {
