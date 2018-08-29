@@ -23,7 +23,7 @@ const resolvedCache = {}
 const copyedFiles = {}
 
 const basedir = process.cwd()
-const configDir = path.join(basedir, PROJECT_CONFIG)
+const configDir = '../configProject'
 const projectConfig = require(configDir)(_.merge)
 const pluginsConfig = projectConfig.plugins || {}
 const outputDirName = projectConfig.outputRoot || CONFIG.OUTPUT_DIR

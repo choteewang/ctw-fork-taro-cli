@@ -26,7 +26,9 @@ const defaultBabelConfig = require('./config/babel')
 const defaultTSConfig = require('./config/tsconfig.json')
 
 const appPath = process.cwd()
-const configDir = path.join(appPath, Util.PROJECT_CONFIG)
+// ctw modify
+// 将configProject改为读取ctw-fork-taro-cli包内的文件
+const configDir = './configProject'
 const projectConfig = require(configDir)(_.merge)
 const sourceDirName = projectConfig.sourceRoot || CONFIG.SOURCE_DIR
 const outputDirName = projectConfig.outputRoot || CONFIG.OUTPUT_DIR
