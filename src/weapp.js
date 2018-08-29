@@ -1751,6 +1751,7 @@ async function build (/*{ watch }*/) {
   copyFiles()
   appConfig = await buildEntry()
   await buildPages()
+  console.log('Enjoy -> 小程序, 第二步结束')
   // if (watch) {
   //   watchFiles()
   // }
