@@ -882,7 +882,7 @@ function buildProjectConfig () {
 }
 
 async function buildEntry () {
-  console.log('buildEntry')
+  // console.log('buildEntry') // 入口console
   Util.printLog(Util.pocessTypeEnum.COMPILE, '入口文件', `${sourceDirName}/${entryFileName}`)
   const entryFileCode = fs.readFileSync(entryFilePath).toString()
   try {
@@ -1012,7 +1012,7 @@ function transfromNativeComponents (configFile, componentConfig) {
 
 // 小程序页面编译
 async function buildSinglePage (page) {
-  console.log('buildSinglePage')
+  // console.log('buildSinglePage') // 入口console
   Util.printLog(Util.pocessTypeEnum.COMPILE, '页面文件', `${sourceDirName}/${page}`)
   const pagePath = path.join(sourceDir, `${page}`)
   let pageJs = Util.resolveScriptPath(pagePath)
@@ -1285,7 +1285,7 @@ function buildUsingComponents (components, isComponent) {
 }
 
 async function buildSingleComponent (componentObj, buildConfig = {}) {
-  console.log('buildSingleComponent')
+  // console.log('buildSingleComponent') // 入口console
   if (hasBeenBuiltComponents.indexOf(componentObj.path) >= 0 && componentsBuildResult[componentObj.path]) {
     return componentsBuildResult[componentObj.path]
   }
@@ -1462,7 +1462,7 @@ async function buildSingleComponent (componentObj, buildConfig = {}) {
 }
 
 function compileDepScripts (scriptFiles) {
-  console.log('compileDepScripts')
+  // console.log('compileDepScripts') // 入口console
   scriptFiles.forEach(async item => {
     if (path.isAbsolute(item)) {
       let outputItem
