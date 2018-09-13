@@ -28,7 +28,7 @@
     "@babel/template": "^7.0.0-rc.2",
     "@babel/traverse": "^7.0.0-rc.2",
     "@babel/types": "^7.0.0-rc.2",
-    "@tarojs/transformer-wx": "1.0.0-beta.11",
+    "ctw-fork-transformer-wx": "git+ssh://git@github.com:choteewang/ctw-fork-transformer-wx.git",
     "autoprefixer": "^8.4.1",
     "babel-core": "^6.26.3",
     "babel-generator": "^6.26.1",
